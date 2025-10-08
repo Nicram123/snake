@@ -108,8 +108,7 @@ class SnakeEnv:
 
         
         self.prev_distance_to_food = getattr(self, 'prev_distance_to_food', self.distance_to_food)
-        
-        self.steps_since_food += 1
+        #self.steps_since_food += 1
         #head_pos = (snake.cor[0].x, snake.cor[0].y)
         #if head_pos in self.recent_heads:
         #    reward -= 0.5
@@ -117,23 +116,22 @@ class SnakeEnv:
         
         if flag: 
           reward += 10 # 10
-          self.steps_since_food = 0
-        reward -= 0.01 # 0.01
+          #self.steps_since_food = 0
+        reward -= 0.01 
         
-        #if self.distance_to_food < self.prev_distance_to_food:
-        #    reward += 0.2
-        #else:
-        #    reward -= 0.1
+        if self.distance_to_food < self.prev_distance_to_food:
+            reward += 0.2
+        else:
+            reward -= 0.1
             
         if snake.bodyCollision() or snake.collision2(): 
           reward -= 10 
           done = True 
           
-        #if self.steps_since_food > 250:
+        #if self.steps_since_food > 150:
         #    reward -= 5.0
         #    done = True
-        
-        #self.prev_distance_to_food = self.distance_to_food
+        self.prev_distance_to_food = self.distance_to_food
         
         
         # --- nowy stan ---
@@ -149,7 +147,6 @@ class SnakeEnv:
             self.dir_down, 
             self.dir_left, 
             self.dir_right, 
-            
             self.apple_left, 
             self.apple_right, 
             self.apple_up, 

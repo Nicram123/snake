@@ -7,17 +7,6 @@ from tensorflow.keras.optimizers import Adam
 from neural_network import SnakeEnv, build_q_network
 
 # --- Hyperparametry ---
-#ALPHA = 0.001
-#GAMMA = 0.99
-#EPSILON = 1.0
-#EPSILON_DECAY = 0.995
-#EPSILON_MIN = 0.05
-#BATCH_SIZE = 64
-#MEMORY_SIZE = 50000
-#NUM_EPISODES = 5000
-#MAX_STEPS = 500
-
-# --- Hyperparametry (zoptymalizowane) ---
 ALPHA = 0.001
 GAMMA = 0.99
 EPSILON = 1.0
@@ -25,8 +14,10 @@ EPSILON_DECAY = 0.995
 EPSILON_MIN = 0.05
 BATCH_SIZE = 64
 MEMORY_SIZE = 50000
-NUM_EPISODES = 10000
-MAX_STEPS = 1500 # , 1000 , 1500 , 2000 
+NUM_EPISODES = 5000
+MAX_STEPS = 500
+
+
 
 
 
@@ -97,7 +88,7 @@ for episode in range(NUM_EPISODES):
                 episode_losses.append(loss)
 
         step_count += 1
-        if step_count % 500 == 0:
+        if step_count % 100 == 0:
             target_q_network.set_weights(q_network.get_weights())
 
         state = next_state

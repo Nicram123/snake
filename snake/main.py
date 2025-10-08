@@ -22,10 +22,8 @@ window.fill((0,0,0))
 FPS = 40
 clock = pygame.time.Clock()
 
-q_network = load_model(r"C:\Users\marci\snake\snake\snake\ snake_ai_ep400.keras", compile=False)
-#q_network = load_model(r"C:\Users\marci\snake\snake\snake\models\ snake_ai_ep600.keras", compile=False)
-# 
-# C:\Users\marci\snake\snake\snake\models\ snake_ai_ep500.keras
+# 100 to goated 
+q_network = load_model(r"C:\Users\marci\snake\snake\snake\models\ snake_ai_ep100.keras", compile=False)
 
 while running:
     for event in pygame.event.get():
