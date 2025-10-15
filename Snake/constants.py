@@ -1,0 +1,10 @@
+WIDTH, HEIGHT = 800, 800
+
+RED = (255, 0, 0)
+
+SIZE = 40 # 35
+
+BLACK = (0, 0, 0)
+
+SIZE2 = 40 # 35
+GREEN = (0, 255, 0)
