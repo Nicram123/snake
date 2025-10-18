@@ -79,7 +79,6 @@ for episode in range(NUM_EPISODES):
     for step in range(MAX_STEPS):
         action = get_action(state, epsilon)
         next_state, reward, done = env.step(action, snake, apple)
-
         memory.append((state, action, reward, next_state, done))
 
         if step_count % 5 == 0:
