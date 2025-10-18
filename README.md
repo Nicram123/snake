@@ -10,6 +10,9 @@ git@github.com:Nicram123/snake_Reinforcement_Learning.git
 ```bash
 pip install pygame
 ```
+```bash
+pip install tensorflow, numpy
+```
 5. Uruchom trening:
 ```bash
 python -m Snake.train
@@ -23,7 +26,7 @@ python main.py
 ## Trening
 Trening Snaka odbywa się:
 * w train.py po przez naukę w epizodach
-* jeden epizod trwa aż do momentu zderzenia ze ścianą (koniec gry), stopniowo ucząc się ruchów nie powodujących kolizji i zmierzających w stronę punktu (zielona kropka) 
+* jeden epizod trwa aż do momentu zderzenia ze ścianą lub z własnym ogonem (koniec gry), stopniowo ucząc się ruchów nie powodujących kolizji i zmierzających w stronę punktu (zielona kropka) 
 ## Wyniki po treningu 
 ![snake](https://github.com/user-attachments/assets/b89d4f36-77e7-46dd-a208-453af1289548)
 ## Uwagi
